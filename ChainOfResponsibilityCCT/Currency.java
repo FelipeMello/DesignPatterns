@@ -7,7 +7,7 @@ package ChainOfResponsibilityCCT;
 
 /**
  * This class will store the amount to dispense 
- * @author felipe m
+ * @author felipe mello
  */
 public class Currency 
 {

@@ -9,22 +9,24 @@ import java.util.Scanner;
 
 /**
  *
- * @author felip
+ * @author felipe mello
  */
 public class ATMChainDemo 
 {
 
-    private DispenseChain c1;
+    private DispenseChain c0;
 
     public ATMChainDemo() 
     {
-        // initialize the chain
-        this.c1 = new CashDispenser(50);
+        // Setting the notes that the atm will dispense.
+        c0 = new CashDispenser(100); 
+        DispenseChain c1 = new CashDispenser(50);
         DispenseChain c2 = new CashDispenser(20);
         DispenseChain c3 = new CashDispenser(10);
         DispenseChain c4 = new CashDispenser(5);
 
         // set the chain of responsibility
+        c0.setNextChain(c1);
         c1.setNextChain(c2);
         c2.setNextChain(c3);
         c3.setNextChain(c4);
@@ -39,13 +41,14 @@ public class ATMChainDemo
         System.out.println("Enter amount to dispense");
         Scanner input = new Scanner(System.in);
         amount = input.nextInt();
-            if (amount % 10 != 0)
+            
+            if (amount % 5 != 0)
             {
-                System.out.println("Amount should be in multiple of 10s.");
+                System.out.println("Amount should be in multiple of 5s.");
                 return;
             }
             // process the request
-            atmDispenser.c1.dispense(new Currency(amount));
+            atmDispenser.c0.dispense(new Currency(amount));
         }
 	}
 }

@@ -6,7 +6,7 @@
 package ChainOfResponsibilityCCT;
 
 /**
- * @author felipe
+ * @author felipe mello
  */
 public interface DispenseChain 
 {
