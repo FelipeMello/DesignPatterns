@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AbstractShape;
+package Prototype;
 
-
-/**
+/*
  *
  * @author felip
  */
-public class Circle extends Shape {
-    public Circle(){
-        type = "Circle";
+public class Square extends Shape {
+    public Square(){
+        type = "Square";
     }
     @Override
     public void draw() {
-        System.out.println("Circle");
+        System.out.println("Square");
     }
     
 }
