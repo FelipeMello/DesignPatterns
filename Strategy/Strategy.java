@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChainOfResponsibilityCCT;
+package Strategy;
 
 /**
- * @author Felipe Mello
+ *
+ * @author Felipe Mello           <https://github.com/FelipeMello>
  */
-public interface DispenseChain 
-{
-
-    void setNextChain(DispenseChain nextChain);
-
-    void dispense(Currency cur);
+public interface Strategy {
+    public int doOperation(int num1, int num2);
 }

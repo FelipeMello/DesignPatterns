@@ -9,27 +9,27 @@ import java.util.Scanner;
 
 /**
  *
- * @author felipe mello
+ * @author Felipe Mello <https://github.com/FelipeMello>
  */
 public class ATMChainDemo 
 {
 
-    private DispenseChain c0;
+    private final DispenseChain hundred;
 
     public ATMChainDemo() 
     {
         // Setting the notes that the atm will dispense.
-        c0 = new CashDispenser(100); 
-        DispenseChain c1 = new CashDispenser(50);
-        DispenseChain c2 = new CashDispenser(20);
-        DispenseChain c3 = new CashDispenser(10);
-        DispenseChain c4 = new CashDispenser(5);
+        hundred = new CashDispenser(100); 
+        DispenseChain fifith = new CashDispenser(50);
+        DispenseChain twenty = new CashDispenser(20);
+        DispenseChain teen = new CashDispenser(10);
+        DispenseChain five = new CashDispenser(5);
 
-        // set the chain of responsibility
-        c0.setNextChain(c1);
-        c1.setNextChain(c2);
-        c2.setNextChain(c3);
-        c3.setNextChain(c4);
+        // set the order of the chain of responsibility
+        hundred.setNextChain(fifith);
+        fifith.setNextChain(twenty);
+        twenty.setNextChain(teen);
+        teen.setNextChain(five);
     }
 
     public static void main(String[] args) 
@@ -48,7 +48,7 @@ public class ATMChainDemo
                 return;
             }
             // process the request
-            atmDispenser.c0.dispense(new Currency(amount));
+            atmDispenser.hundred.dispense(new Currency(amount));
         }
 	}
 }

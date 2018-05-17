@@ -7,7 +7,7 @@ package ChainOfResponsibilityCCT;
 
 /**
  *
- * @author felipe mello
+ * @author Felipe Mello
  */
 public class CashDispenser implements DispenseChain {
 
